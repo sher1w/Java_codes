@@ -1,0 +1,127 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package javaapplication53;
+import java.util.*;
+/**
+ *
+ * @author Me
+ */
+public class JavaApplication53 {
+    
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) 
+    {
+         
+          Scanner sc = new Scanner(System.in);
+        class Student
+        { 
+            private String nam;
+          
+            private int roll;
+            
+            void getdata()
+            {
+           System.out.println("Enter Name ");
+           nam = sc.next();
+           
+           System.out.println("Enter roll no ");
+           roll = sc.nextInt();
+        
+            }
+             void display_data()    
+            {
+                System.out.println("The student roll-no is"+ roll);
+                System.out.println("Name:"+nam);
+            }
+        }
+        
+        class marks extends Student
+        {
+            private int  m1, m2, m3, m4 , m5 ;
+            void get_marks()
+            {
+                System.out.println("Enter marks for 5 Subjects");
+                      m1 = sc.nextInt();
+                      m2 = sc.nextInt();   
+                      m3 = sc.nextInt();     
+                      m4 = sc.nextInt();  
+                      m5 = sc.nextInt();
+     
+            }
+    int returnm1()
+    {
+        return m1;
+    }            
+    
+    int returnm2()
+    {
+        return m2;
+    }  
+     
+    int returnm3()
+    {
+        return m3;
+    }  
+    
+    int returnm4()
+    {
+        return m4;
+    }  
+    
+    int returnm5()
+    {
+        return m5;
+    }  
+            void display_marks()
+            {
+                System.out.println("The marks for 5 Subjects are "+" "+m1+" "+m2+" "+m3+" "+m4+" "+m5);
+            }
+            
+        }
+        
+        class results extends marks
+        {
+            private int total ;
+            private float percentage;
+            void cal(int m1,int m2,int m3,int m4,int m5 )
+            {
+             percentage =(m1+m2+m3+m4+m5)/5;
+             total= m1+m2+m3+m4+m5;
+             
+            }
+            
+            void display_all()
+            {
+                System.out.println("Percentage: "+ percentage);
+                System.out.println("Total: "+ total);
+               display_marks();
+                display_data();
+            
+            }
+            
+        }
+        
+        results r = new results();
+        r.getdata();
+        
+      int a , b , c , d , e;
+        r.get_marks();
+      a = r.returnm1();
+      b = r.returnm2();
+    c = r.returnm3();
+     d = r.returnm4();
+      e = r.returnm5();
+        r.cal(a ,  b , c ,  d ,  e);
+        
+        System.out.println();
+        System.out.println("STUDENT - DETAILS");
+        r.display_all();
+        // TODO code application logic here
+    }
+    
+}
